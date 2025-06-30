@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+nav {
+  background: linear-gradient(90deg, #1565c0, #42a5f5);
+  padding: 15px 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeDown 0.6s ease;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffeb3b;
+  transition: width 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  color: #ffeb3b;
+}
+
+.container {
+  flex: 1;
+  padding: 50px 13%;
+  animation: fadeUp 1s ease;
+}
+.tentang-saya {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  background: white;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 50px;
+  transition: box-shadow 0.3s ease;
+}
+.tentang-saya:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tentang-saya img {
+  width: 45%;
+  max-width: 280px;
+  border-radius: 12px;
+  transition: transform 0.5s ease;
+  animation: imageFade 1s ease;
+}
+
+.tentang-saya img:hover {
+  transform: scale(1.05);
+}
+
+.deskripsi {
+  flex: 1;
+  text-align: justify;
+  font-size: 18px;
+}
+
+.deskripsi h2 {
+  color: #1565c0;
+  margin-bottom: 25px;
+}
+.pengalaman {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
+}
+.pengalaman h2 {
+  color: #1565c0;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-left: 50%;
+  
+}
+
+.pengalaman .item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  transition: box-shadow 0.3s ease;
+}
+
+.pengalaman .item:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.pengalaman img {
+  width: 45%;
+  max-width: 200px;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+  animation: imageFade 0.8s ease;
+}
+.pengalaman img:hover {
+  transform: scale(1.05);
+}
+
+.pengalaman ul {
+  padding-left: 20px;
+  margin-top: 5px;
+}
+.pengalaman ul li {
+  margin-bottom: 5px;
+}
+.pengalaman strong {
+  color: #0d47a1;
+}
+footer {
+  background: #0d47a1;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+}
+@keyframes fadeDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes imageFade {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .tentang-saya,
+  .pengalaman .item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tentang-saya img,
+  .pengalaman img {
+    width: 100%;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
